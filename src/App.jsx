@@ -16,7 +16,6 @@ function BotaoSenai({ texto }) {
    border: "3px solid #111111b6",
     borderRadius: "12px",
     cursor: "pointer",
-    animation: "move 0.5s ease-in-out infinite alternate",
 }}>
   {texto}</button> 
   ); 
