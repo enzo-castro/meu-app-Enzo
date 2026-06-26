@@ -23,5 +23,4 @@ function Cartao({ nome, cargo }) {
     <h2>{nome}</h2>      
     <p>{cargo}</p>    
     </div>  ); }
-
-export default { BotaoSenai, Cartao };
+export {BotaoSenai, Cartao}; 
