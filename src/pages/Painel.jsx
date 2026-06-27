@@ -4,13 +4,12 @@ function Painel(){
 
    return (
     <div>
-      <h2>Painel</h2>
      <nav>
         <Link to="/home">Home</Link><br></br>
         <Link to="/sobre">Sobre</Link><br></br>
         <Link to="/contato">Contato</Link><br></br>
       </nav>
-
+     <h1>Painel</h1>
 {/* filho renderiza aqui */}
 
       <Outlet />
