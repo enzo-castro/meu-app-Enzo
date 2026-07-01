@@ -216,7 +216,7 @@ body{
 
 .card:hover{
     transform:translateY(-8px);
-    border-color:#3b82f6;
+    border-color:#285dbe;
     box-shadow:0 10px 25px rgba(59,130,246,.35);
 }
 
@@ -326,7 +326,7 @@ body{
 .navbar{
     position:fixed;
     top:0;
-    width:1045px;
+    width:1044px;
     height:65px;
     background:#162035;
     display:flex;
