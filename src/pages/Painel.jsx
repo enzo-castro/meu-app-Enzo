@@ -2,25 +2,23 @@ import { Link, Outlet } from "react-router-dom";
 
 function Painel() {
   return (
-    <div className="layout">
-      {/* SIDEBAR */}
-      <aside className="sidebar">
-        <h1 className="logo">Painel</h1>
+    <>
+      <header className="navbar">
+        <h2>Dashboard</h2>
 
-        <nav>
+        <nav className="nav-links">
           <Link to="/home">🏠 Home</Link>
           <Link to="/sobre">ℹ️ Sobre</Link>
           <Link to="/contato">📞 Contato</Link>
           <Link to="/posts">📝 Posts</Link>
           <Link to="/usuarios">👤 Usuários</Link>
         </nav>
-      </aside>
+      </header>
 
-      {/* CONTEÚDO */}
-      <main className="content">
+      <main className="page">
         <Outlet />
       </main>
-    </div>
+    </>
   );
 }
 

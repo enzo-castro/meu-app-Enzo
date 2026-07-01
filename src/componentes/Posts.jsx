@@ -16,7 +16,8 @@ function Posts() {
 
   return (
     <div className="posts-container">
-      <h1>Buscar Post</h1>
+      <h1>Buscar Post</h1><br/>
+      <p>Utilize o campo abaixo para buscar um post específico pelo seu ID.</p>
 
       {/* 🔎 SEARCH BOX ESTILIZADA */}
       <div className="search-box">
@@ -38,6 +39,7 @@ function Posts() {
           <p>{post.body}</p>
         </div>
       )}
+      <br/><p>Dica: Experimente pesquisar pelos IDs 1, 5, 10, 25, 50 ou 100 para visualizar diferentes posts.</p>
     </div>
   );
 }
