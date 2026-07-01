@@ -1,28 +1,45 @@
-import { useState, useEffect } from 'react';
+import { useState } from "react";
+import api from "../services/api";
 
-function Posts() { const [posts, setPosts] = useState([]);
+function Posts() {
+  const [id, setId] = useState("");
+  const [post, setPost] = useState(null);
 
-  useEffect(() => {fetch('https://jsonplaceholder.typicode.com/todos/')
-    .then(r => r.json())
-    .then(d => setPosts(d));
-  }, []);
+  async function buscarPost() {
+    try {
+      const { data } = await api.get(`/posts/${id}`);
+      setPost(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
-    <ul>
-      {posts.slice(0, 5).map(p => ( 
-        <li 
-        key={p.id}>{p.title}
-        </li>
-      ))}
-    </ul>
+    <div className="posts-container">
+      <h1>Buscar Post</h1>
+
+      {/* 🔎 SEARCH BOX ESTILIZADA */}
+      <div className="search-box">
+        <input
+          type="number"
+          placeholder="Digite o ID do post..."
+          value={id}
+          onChange={(e) => setId(e.target.value)}
+        />
+
+        <button onClick={buscarPost}>
+          🔍 Buscar
+        </button>
+      </div>
+
+      {post && (
+        <div className="post-card">
+          <h2>{post.title}</h2>
+          <p>{post.body}</p>
+        </div>
+      )}
+    </div>
   );
 }
 
-async function buscarPost(id) {
-  const res = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${id}`);
-  const data = await res.json();
-  return data;
-}
-
-export {Posts, buscarPost};
+export default Posts;
